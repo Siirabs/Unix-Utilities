@@ -7,14 +7,14 @@ int main(int argc, char ** argv) {
 	int i = 1;
 	//Checks if there is only one given argument
 	if(argc == 1) {
-		return 0;
+		exit(0);
 	}
 	//Loop file by file
 	for (; i<argc; i++) {
 		//Exits if reading the file fails
 		if ((file = fopen(argv[i], "r")) == NULL) {
 			printf("my-cat: cannot open file\n");
-			exit(0);
+			exit(1);
 		}
 		//Read until end of file
 		while ((fgets(c, MAX, file)) != NULL) {
